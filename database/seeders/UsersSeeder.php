@@ -30,13 +30,6 @@ class UsersSeeder extends Seeder
 
         ]);
 
-        // User::create([
-        //     'name' => 'Iam User',
-        //     'password' => Hash::make('12345678'),
-        //     'email' => 'user@gmail.com',
-        //     'email_verified_at' => now(),
-        //     'role' => 'Mahasiswa',
-        //     'created_at' => now()
-        // ]);
+        
     }
 }
