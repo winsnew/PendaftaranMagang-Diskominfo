@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -19,7 +20,23 @@ class UsersSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
-            'role' => 'admin',
+            'role'=> 'admin',
         ]);
+        User::create([
+            'name' => 'user',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('user123'),
+            'role' => 'mahasiswa',
+
+        ]);
+
+        // User::create([
+        //     'name' => 'Iam User',
+        //     'password' => Hash::make('12345678'),
+        //     'email' => 'user@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'role' => 'Mahasiswa',
+        //     'created_at' => now()
+        // ]);
     }
 }
