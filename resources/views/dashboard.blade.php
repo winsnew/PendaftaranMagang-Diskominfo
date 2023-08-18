@@ -13,10 +13,15 @@
                 @auth
                     @if (auth()->user()->role == 'admin')
                         @include('components.dashboard-admin')
+                        
                     @elseif(auth()->user()->role == 'mahasiswa')
                         @include('components.dashboard-user')
+                        
+                        
                 @endif
                 @endauth
+
+                
 
 
                 </div>
