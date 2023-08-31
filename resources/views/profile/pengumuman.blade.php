@@ -4,11 +4,16 @@
             {{ __('pengumuman') }}
         </h2>
     </x-slot>
-    <div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
-        <div class="w-full mb-1 dark:text-white">
-            <div class="ml-64">
-                <p>hello</p>
+    @if (auth()->user()->role == 'mahasiswa')
+    <div class="p-4 bg-white block sm:flex items-center  justify-between border-b border-gray-200 lg:mt-16 dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full min-h-screen dark:text-white">
+            <div class="">
+                <div>
+                    <p class="dark:text-white">hello</p>
+                    ssssssssssssssssssssssssssssssssssssssssssss
+                </div>
             </div>
         </div>
     </div>
+    @endif
 </x-app-layout>
