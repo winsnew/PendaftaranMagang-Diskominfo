@@ -1,7 +1,6 @@
 
 import 'flowbite';
-import Alpine from 'alpinejs';
+import './darkMode';
+import './main';
 
-window.Alpine = Alpine;
 
-Alpine.start();

@@ -10,27 +10,39 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- ... -->
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased ">
-        <div class="min-h-screen bg-gray-300 dark:bg-gray-900">
+        <div class="bg-gray-50 dark:bg-gray-800">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-4 px-0 sm:px-6 lg:px-8">
+                <header class="fixed  border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="container py-3 mx-auto">
                         {{ $header }}
                     </div>
                 </header>
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="relative w-full h-full overflow-y-auto lg:ml-64 dark:bg-gray-900">
                 {{ $slot }}
             </main>
         </div>
+        <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
     </body>
+    
 </html>

@@ -5,23 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="py-4">
+    <div class="py-0">
         <div class="p-4 sm:ml-64">
             <div class="bg-blue">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-
-                @auth
-                    @if (auth()->user()->role == 'admin')
-                        @include('components.dashboard-admin')
-                        
-                    @elseif(auth()->user()->role == 'mahasiswa')
-                        @include('components.dashboard-user')
-                        
-                        
-                @endif
-                @endauth
-
-                
+                                
 
 
                 </div>

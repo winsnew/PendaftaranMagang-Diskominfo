@@ -40,7 +40,9 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-            'role'=> 'admin',
+            'role'=> 'mahasiswa',
+            'status'=> 'waiting update',
+            'sesi' => false
         ]);
 
         event(new Registered($user));
