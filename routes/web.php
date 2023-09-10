@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/galeri', function () {
+    return view('galeri');
+});
+Route::get('/kontak', function () {
+    return view('kontak');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,13 +47,17 @@ Route::middleware(['auth'])->group(function () {
 /* Kelola Data User for Admin Role*/
 Route::middleware(['auth'])->group(function () {
     Route::get('profile/manageadmin', [AdminController::class, 'index'])->name('profile.manageadmin');
-    Route::get('editforadmin/{id}', [AdminController::class, 'edit'])->name('profile.editforadmin');
+    Route::get('editforadmin/{id}', [AdminController::class, 'edit','download'])->name('profile.editforadmin');
     Route::post('updateuser/{id}', [AdminController::class, 'update'])->name('profile.updateuser');
+    
 });
 
 /*input jadwal from admin to every user*/
 Route::middleware(['auth'])->group(function () {
     Route::get('profile/inputjadwal', [AdminController::class, 'schedule'])->name('profile.inputjadwal');
+    Route::get('jadwalcontrol/{id}', [AdminController::class, 'editjadwal'])->name('profile.jadwalcontrol');
+    Route::post('postjadwal/{id}', [AdminController::class, 'simpan'])->name('profile.postjadwal');
+
 });
 
 

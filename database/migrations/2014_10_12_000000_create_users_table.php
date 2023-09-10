@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('role');
             $table->string('status');
+            $table->boolean('sesi');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -16,9 +16,9 @@
 </head>
 
 <body class="antialiased">
-<nav class="bg-red-500 sticky top-0 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav class="bg-red-500 sticky top-0 border-red-500 dark:bg-gray-900 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" class="flex items-center">
+            <a href="#" class="flex items-center">
                 <img src="https://diskominfo.semarangkota.go.id//uploads/infoumum/20200117084655-2020-01-17infoumum084654.png" class="h-10 mr-10 ml-5" alt="Flowbite Logo" />
             </a>
             <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-multi-level" aria-expanded="false">
@@ -29,20 +29,20 @@
             </button>
             @if (Route::has('login'))
             <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
-                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-red-500 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red-500 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red-500 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 @auth    
                     <li>
                         <a href="{{ url('/dashboard') }}" class="block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Dashboard</a>
                     </li>
                     <li>
-                        <div id="dropdownNavbar" class="z-10 hidden font-normal bg-red-500 divide-y divide-red-500 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm" aria-labelledby="dropdownLargeButton">
                                 @else
                                 <li>
                                     <a href="/" class="block px-0 py-2 text-white hover:bg-yellow-300 dark:hover:bg-gray-600 dark:hover:text-white">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="/galeri" class="block px-0 py-2  text-white hover:bg-yellow-300 dark:hover:bg-gray-600 dark:hover:text-white">Galeri</a>
+                                    <a href="/galeri" class="block px-0 py-2 text-white hover:bg-yellow-300 dark:hover:bg-gray-600 dark:hover:text-white">Galeri</a>
                                 </li>
                                 <li>
                                     <a href="/kontak" class="block px-0 py-2 text-white hover:bg-yellow-300 dark:hover:bg-gray-600 dark:hover:text-white">Kontak</a>
@@ -54,11 +54,10 @@
                                     @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="block pr-3 pl-0 py-2 text-white hover:bg-yellow-300 dark:hover:bg-gray-600 dark:hover:text-white">Daftar</a>
                                     @endif
-
                                 </li>
-
                             </ul>
                             @endauth
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -66,20 +65,24 @@
         </div>
         </div>
     </nav>
-    <section class="background-radial-gradient mb-40">
+
+<!-- Section: Design Block -->
+<section class="background-radial-gradient mb-40">
   <!-- Jumbotron -->
   <div class=" bg-red-600 px-6 py-16 text-center md:px-12 lg:text-left">
     <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <div class="mt-12 lg:mt-0">
-          <h2 class="mt-0 mb-16 text-4xl font-bold tracking-tight md:text-5xl xl:text-6xl text-[hsl(218,81%,95%)]">
-            Magang Diskominfo <br /><span class="text-yellow-300">Kota Semarang</span>
+          <h6 class="mt-0 mb-8 text-1xl tracking-tight md:text-2xl xl:text-3xl text-[hsl(218,81%,95%)]">
+            Diskominfo<span class="text-yellow-300">/Kontak</span>
+          </h6>
+          <h2 class="mt-0 mb-5 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
+            Kontak Kami
           </h2>
-          <span class="text-white">Dinas Kominfo Kota Semarang membuka kesempatan bagi seluruh mahasiswa/i tanpa terkecuali yang
-            berkeinginan melaksanakan magang dalam rangka menyelesaikan studi perguruan tinggi</span>
+          <p class="mt-0 mb-5 text-1xl  tracking-tight md:text-2xl xl:text-2xl text-[hsl(218,81%,95%)]">Hubungi Kami Segala Pertanyaan Anda</p>
         </div>
         <div class="mb-12 lg:mb-0">
-          <img src="https://stage.gamelab.id/img/internship/smk-mm-v3.png"
+          <img src="images/contact.png"
             class="w-full rounded-lg " alt="" />
         </div>
       </div>
@@ -87,104 +90,104 @@
   </div>
   <!-- Jumbotron -->
 </section>
-
 <!-- Container for demo purpose -->
 <div class="container my-24 mx-auto md:px-6">
   <!-- Section: Design Block -->
   <section class="mb-32">
-    <h2 class="mb-4 text-center text-3xl font-bold">
-      Alur Magang
-    </h2>
-    <p class="mb-12 text-center text-1xl">Tahapan-tahapan proses pengajuan magang di Diskominfo Kota Semarang</p>
-    <div class="flex flex-wrap items-center">
-      <div class="mb-12 w-full shrink-0 grow-0 basis-auto md:px-6 lg:mb-0 lg:w-5/12">
-        <div class="block overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20"
-          data-te-ripple-init data-te-ripple-color="light">
-          <img src="./asset/speaker.jpeg" class="w-full"/>
-        </div>
+    <div class="flex justify-center">
+      <div class="text-center md:max-w-xl lg:max-w-3xl">
+        <h2 class="mb-12 px-6 text-3xl font-bold">Kontak Kami</h2>
       </div>
-
-      <div class="w-full shrink-0 grow-0 basis-auto md:px-6 lg:w-7/12">
-        <div class="mb-12 flex">
-          <div class="shrink-0">
-            <div class="rounded-md bg-[hsl(204,30%,20%)] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-              d="M6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Zm11-3h-2V5a1 1 0 0 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 0 0 2 0V9h2a1 1 0 1 0 0-2Z"/>
-            </svg>
-            </div>
-          </div>
-          <div class="ml-4 grow">
-            <p class="mb-1 font-bold">Pendaftaran Akun</p>
-            <p class="text-neutral-500 dark:text-neutral-300">
-              Langkah awal untuk dapat mengajukan magang di diskominfo kota semarang yaitu membuat akun terlebih dahulu
-            </p>
+    </div>
+    <div
+      class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+      <div class="flex flex-wrap items-center">
+        <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+          <div class="h-[500px] w-full">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2176680560888!2d110.4114584147208!3d-6.983619694954946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4fd277d06b%3A0x4056bfa9e8303c06!2sDinas%20Kominfo%20Kota%20Semarang!5e0!3m2!1sid!2sid!4v1579572986664!5m2!1sid!2sid"
+              class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" frameborder="0"
+              allowfullscreen></iframe>
           </div>
         </div>
-
-        <div class="mb-12 flex">
-          <div class="shrink-0">
-            <div class="rounded-md bg-[hsl(204,30%,20%)] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>
-            </svg>
+        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+          <div class="flex flex-wrap px-3 pt-12 pb-12 md:pb-0 lg:pt-0">
+            <div class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
+              <div class="flex items-start">
+                <div class="shrink-0">
+                  <div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                        d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                    <path
+                        d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold dark:text-white">
+                    Alamat
+                  </p>
+                  <p class="text-neutral-500 dark:text-neutral-200">
+                  Sekayu, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50132
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="ml-4 grow">
-            <p class="mb-1 font-bold">Masuk Akun</p>
-            <p class="text-neutral-500 dark:text-neutral-300">
-              Setelah membuat akun maka dapat melakukan masuk dengan menggunakan akun yang kamu udah daftarkan, kemudian diarahkan
-               ke halaman dashboard 
-            </p>
-          </div>
-        </div>
-
-        <div class="mb-12 flex">
-          <div class="shrink-0">
-            <div class="rounded-md bg-[hsl(204,30%,20%)] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M6 1v4a1 1 0 0 1-1 1H1m14-4v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z"/>
-            </svg>
+            <div class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
+              <div class="flex items-start">
+                <div class="shrink-0">
+                  <div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="mr-3 h-5 w-5">
+                    <path
+                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                    <path
+                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold dark:text-white">
+                    Email
+                  </p>
+                  <p class="text-neutral-500 dark:text-neutral-200">
+                    diskominfo@semarangkota.go.id
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="ml-4 grow">
-            <p class="mb-1 font-bold">Lengkapi Data</p>
-            <p class="text-neutral-500 dark:text-neutral-300">
-              Mengisi dan Melengkapi data-data maupun berkas kalian pada form yang telah disediakan di menu 
-            </p>
-          </div>
-        </div>
-
-        <div class="mb-12 flex">
-          <div class="shrink-0">
-            <div class="rounded-md bg-[hsl(204,30%,20%)] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 1v4a1 1 0 0 1-1 1H1m4 6 2 2 4-4m4-8v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z"/>
-            </svg>
+            <div
+              class="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:mb-0 xl:w-6/12 xl:px-12">
+              <div class="align-start flex">
+                <div class="shrink-0">
+                  <div class="inline-block rounded-md bg-primary-100 p-4 text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                        fill-rule="evenodd"
+                        d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-2 font-bold dark:text-white">Telepon</p>
+                  <p class="text-neutral-500 dark:text-neutral-200">
+                    (024)3549446
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="ml-4 grow">
-            <p class="mb-1 font-bold">Seleksi Berkas</p>
-            <p class="text-neutral-500 dark:text-neutral-300">
-              Pihak Diskominfo akan menyeleksi dari berkas kalian yang dikumpulkan diterima atau ditolak untuk magang di Diskominfo Kota Semarang
-            </p>
-          </div>
-        </div>
-        <div class="flex">
-          <div class="shrink-0">
-            <div class="rounded-md bg-[hsl(204,30%,20%)] p-4 shadow-lg dark:bg-[hsl(204,23%,30%)]">
-            <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1m6 0v3H6V2M5 5h8m-8 5h8m-8 4h8"/>
-            </svg>
-            </div>
-          </div>
-          <div class="ml-4 grow">
-            <p class="mb-1 font-bold">Hasil</p>
-            <p class="text-neutral-500 dark:text-neutral-300">
-              Pihak Diskominfo mengumumkan hasil seleksi diterima atau ditolak. Bagi Calon Magang yang diterima akan mendapatkan
-              surat penerimaan magang 
-            </p>
           </div>
         </div>
       </div>
@@ -201,7 +204,7 @@
     <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
       <!-- Tailwind Elements section -->
       <div class="">
-          <a href="#" class="flex items-center mb-4">
+          <a href="/" class="flex items-center mb-4">
             <img src="https://diskominfo.semarangkota.go.id//uploads/infoumum/20200117084655-2020-01-17infoumum084654.png" class="h-14 mr-3" alt="FlowBite Logo" />
           </a>
         <p class="mb-4 flex items-center justify-center md:justify-start" >
@@ -253,8 +256,8 @@
           Link Terkait
         </h6>
         <a clas="hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200" href="https://semarangkota.go.id/">
-          <p class="mb-4 flex items-center justify-center md:justify-start">
-            <svg class="w-5 h-5 mr-3 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <p class="mb-4 flex items-center justify-center md:justify-start">
+          <svg class="w-5 h-5 mr-3 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
           </svg>
           Semarang Kota
@@ -368,14 +371,5 @@
       >Dinas Kominfo Kota Semarang</a>
   </div>
 </footer>
-
-
-
-
-
-
-
-
 </body>
-
 </html>

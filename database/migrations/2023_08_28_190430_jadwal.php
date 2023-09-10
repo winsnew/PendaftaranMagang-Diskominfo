@@ -15,11 +15,12 @@ return new class extends Migration
 
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->date('tanggal');
-            $table->integer('bulan');
+            $table->date('tanggal selesai');
             $table->text('keterangan tempat');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('datamahasiswa')->onDelete('cascade');
+            
         });
     }
 

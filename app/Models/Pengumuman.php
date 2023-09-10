@@ -10,13 +10,18 @@ class Pengumuman extends Model
     use HasFactory;
     protected $table = 'pengumuman';
     protected $fillable = [
-        'user_id',
         'tanggal',
-        'bulan',
-        'keterangan tempat'
+        'tanggalselesai',
+        'keterangantempat',
     ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function mahasiswa()
+    {
+        return $this->belongsTo(DataMahasiswa::class, 'user_id', 'user_id');
+    }
+
 }

@@ -10,4 +10,6 @@ class DataMahasiswa extends Model
     use HasFactory;
     protected $table = 'datamahasiswa';
     protected $fillable = ['nama', 'nim','Instansi', 'jurusan', 'semester', 'nohp', 'file'];
+
+   
 }

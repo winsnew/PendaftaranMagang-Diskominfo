@@ -21,7 +21,8 @@ class UsersSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
             'role' => 'admin',
-            'status' => 'active'
+            'status' => 'active',
+            'sesi'=> 1
 
         ]);
         User::create([
@@ -29,7 +30,8 @@ class UsersSeeder extends Seeder
             'email' => 'user@gmail.com',
             'password' => Hash::make('user123'),
             'role'=> 'mahasiswa',
-            'status'=> 'active'
+            'status'=> 'active',
+            'sesi' => 0
 
         ]);
 

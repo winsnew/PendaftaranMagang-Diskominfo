@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\DataMahasiswa;
+use App\Models\Pengumuman;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -63,16 +64,21 @@ class UserController extends Controller
 
         return redirect()->route('profile.manageuser');
     }
+    
 
     public function pengumuman()
     {
         $user = auth()->user();
         $datas = DataMahasiswa::where('user_id', $user->id)->get();
-        return view('profile.hasiluser', compact(['datas']));
+        
+        return view('profile.hasiluser', compact(['datas', 'user']));
     }
 
     public function lihatjadwal()
     {
-        return view('profile.pengumuman');
+        $user = auth()->user();
+        $data = User::where('id', $user->id)->get();
+        $jadwal = Pengumuman::where('user_id', $user->id)->get();
+        return view('profile.pengumuman', compact(['jadwal', 'data']));
     }
 }
